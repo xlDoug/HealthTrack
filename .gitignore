@@ -22,3 +22,6 @@
 hs_err_pid*
 
 src/br/com/dougcunha/healthtrack/singleton/ConnectionManager\.java
+
+#Mac files
+.DS_Store
