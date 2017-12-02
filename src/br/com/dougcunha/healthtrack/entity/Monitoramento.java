@@ -1,12 +1,12 @@
 package br.com.dougcunha.healthtrack.entity;
 
-import java.util.Date;
+import java.util.Calendar;
 
 public class Monitoramento {
 
 	private int id;
 
-	private Date data;
+	private Calendar data;
 
 	private Usuario usuario;
 
@@ -22,14 +22,19 @@ public class Monitoramento {
 		super();
 	}
 
-	public Monitoramento(int id, Date data, Usuario usuario) {
+	public Monitoramento(int id, Calendar data, Usuario usuario) {
 		super();
 		this.id = id;
 		this.data = data;
 		this.usuario = usuario;
 	}
+	public Monitoramento(Calendar data, Usuario usuario) {
+		super();
+		this.data = data;
+		this.usuario = usuario;
+	}
 
-	public Date getData() {
+	public Calendar getData() {
 		return data;
 	}
 
@@ -41,7 +46,7 @@ public class Monitoramento {
 		this.id = id;
 	}
 
-	public void setData(Date data) {
+	public void setData(Calendar data) {
 		this.data = data;
 	}
 

@@ -1,41 +1,50 @@
 package br.com.dougcunha.healthtrack.dao.implement;
 
-import java.util.List;
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Calendar;
 
 import br.com.dougcunha.healthtrack.dao.interfaces.UsuarioDAO;
+import br.com.dougcunha.healthtrack.dao.singleton.ConnectionManager;
 import br.com.dougcunha.healthtrack.entity.Usuario;
 
-public class OracleUsuarioDAO implements UsuarioDAO {
+class OracleUsuarioDAO implements UsuarioDAO {
 
-	@Override
-	public void cadastrar(Usuario usuario) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void atualizar(Usuario usuario) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void remover(int id) {
-		// TODO Auto-generated method stub
-
-	}
+	private Connection conn;
 
 	@Override
 	public Usuario buscar(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		conn = ConnectionManager.getInstance().getOracleConnection();
+		Usuario u = null;
+		String sqlSelectUser = "SELECT * FROM T_USUARIO where COD_USUARIO = ?";
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(sqlSelectUser);
+			pstmt.setInt(1, id);
+			ResultSet rs = pstmt.executeQuery();
+			if (rs.next()) {
+				u = new Usuario();
+				u.setId(rs.getInt("COD_USUARIO"));
+				u.setNome(rs.getString("NM_NOME"));
+				u.setEmail(rs.getString("NM_EMAIL_CONTATO"));
+				Date dtNasc = rs.getDate("DT_NASCIMENTO");
+				Calendar cal = Calendar.getInstance();
+				cal.setTime(dtNasc);
+				u.setDtNasc(cal);
+				u.setSenha(rs.getString("NM_HASH_SENHA"));
+				u.setAltura(rs.getFloat("NR_ALTURA_CM"));
+			}
+			rs.close();
+			conn.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return u;
 	}
 
-	@Override
-	public List<Usuario> listar() {
 
-
-		return null;
-	}
 
 }

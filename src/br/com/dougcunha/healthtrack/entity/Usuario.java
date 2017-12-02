@@ -1,14 +1,14 @@
 package br.com.dougcunha.healthtrack.entity;
-import java.util.Date;
+import java.util.Calendar;
 public class Usuario {
 	private int id;
 	private String nome;
-	private Date dtNasc;
+	private Calendar dtNasc;
 	private String email;
 	private String senha;
 	private float altura;
 	
-	public Usuario(int id, String nome, Date dtNasc, String email, String senha, float altura) {
+	public Usuario(int id, String nome, Calendar dtNasc, String email, String senha, float altura) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -32,7 +32,7 @@ public class Usuario {
 	public String getNome() {
 		return nome;
 	}
-	public Date getDtNasc() {
+	public Calendar getDtNasc() {
 		return dtNasc;
 	}
 	public String getEmail() {
@@ -50,7 +50,7 @@ public class Usuario {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public void setDtNasc(Date dtNasc) {
+	public void setDtNasc(Calendar dtNasc) {
 		this.dtNasc = dtNasc;
 	}
 	public void setEmail(String email) {
@@ -61,6 +61,12 @@ public class Usuario {
 	}
 	public void setAltura(float altura) {
 		this.altura = altura;
+	}
+
+	@Override
+	public String toString() {
+		return "Usuario [id=" + id + ", nome=" + nome + ", dtNasc=" + dtNasc + ", email=" + email + ", senha=" + senha
+				+ ", altura=" + altura + "]";
 	}
 
 }

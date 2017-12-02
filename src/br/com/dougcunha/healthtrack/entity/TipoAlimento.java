@@ -1,21 +1,30 @@
 package br.com.dougcunha.healthtrack.entity;
 public class TipoAlimento {
-	private int id;
 	private String nome;
-	public int getId() {
-		return id;
-	}
+	
 
 	public String getNome() {
 		return nome;
 	}
 
-	public void setId(int id) {
-		this.id = id;
-	}
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	public TipoAlimento(String nome) {
+		super();
+		this.nome = nome;
+	}
+
+	public TipoAlimento() {
+		super();
+	}
+
+
+	@Override
+	public String toString() {
+		return "TipoAlimento [nome=" + nome + "]";
 	}
 
 
