@@ -1,0 +1,12 @@
+.dropdown-menu {
+  min-width:20rem;
+}
+
+footer {
+    background-color: #F3F3F3;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    position:fixed;
+    bottom:0;
+    width:100%;
+}
