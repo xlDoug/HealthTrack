@@ -1,18 +1,22 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <title>Alimentação</title>
-  <link rel="stylesheet" href="resources/css/bootstrap.min.css">
-  <link rel="stylesheet" href="resources/css/custom.css">
-
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/tether.min.css"/>
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/custom.css"/> 
 </head>
 
 <body>
 
   <!--  MENU NAVEGAÇÃO-->
-  <nav class="navbar navbar-toggleable-md navbar-inverse bg-primary bg-faded">
+  <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
       aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -183,15 +187,12 @@
   </div>
 
 </body>
-<footer class="text-center bg-faded">
+<footer class="text-center">
   Health Track - 2017
 </footer>
-
-<script src="resources/js/jquery.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
-  crossorigin="anonymous"></script>
-<script src="resources/js/bootstrap.min.js"></script>
-<script src="resources/js/popper.js"></script>
-
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/tether.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery.js"></script>
+<script 	type="text/javascript" src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
+<script type="text/javascript"  src="${pageContext.request.contextPath}/resources/js/popper.js"/></script>
 
 </html>
