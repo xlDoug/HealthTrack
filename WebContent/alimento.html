@@ -3,7 +3,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>Peso</title>
+  <title>Alimentação</title>
   <link rel="stylesheet" href="resources/css/bootstrap.min.css">
   <link rel="stylesheet" href="resources/css/custom.css">
 
@@ -24,15 +24,15 @@
           <a class="nav-link" href="#">Dashboard</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Alimentação</a>
+          <a class="nav-link" href="#">Alimentação
+            <span class="sr-only">(current)</span>
+          </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Atividade Fisica</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Peso            
-            <span class="sr-only">(current)</span>
-          </a>
+          <a class="nav-link" href="#">Peso</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Pressao Arterial</a>
@@ -69,34 +69,49 @@
 
   <!-- CONTEUDO -->
   <div class="container my-3">
-    <h2>Cadastro de Peso</h2>
+    <h2>Cadastro de Alimentação</h2>
     <form action="" method="post" class="my-5">
       <div class="form-group row">
-        <label class="col-sm-2 col-form-label" for="dt-peso">Peso em KG</label>
-        <div class="col-sm-2">
-          <input type="number" name="nrPeso" id="nr-peso" class="form-control">
+        <label class="col-sm-2 col-form-label" for="dt-consumo">Data do Consumo</label>
+        <div class="col-sm-3">
+          <input type="date" name="dtConsumo" id="dt-consumo" class="form-control">
         </div>
-        <label class="col-sm-2 col-form-label" for="dt-peso">Data da Pesagem</label>
-        <div class="col-sm-4">
-          <input type="date" name="dtPeso" id="dt-peso" class="form-control">
+
+        <label class="col-sm-2 col-form-label" for="nm-tipo">Tipo do Alimento</label>
+        <div class="col-sm-3">
+          <input type="text" name="nmTipo" id="nm-tipo" class="form-control">
         </div>
       </div>
-      <div>
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label" for="nr-calorias">Numero de Calorias</label>
+        <div class="col-sm-3">
+          <input type="number" name="nrCalorias" id="nr-calorias" class="form-control">
+        </div>
+        <label class="col-sm-2 col-form-label" for="desc">Descrição</label>
+        <div class="col-sm-5">
+          <input type="text" name="descp" id="desc" class="form-control">
+        </div>
+      </div>
+      <div >
           <input type="submit" value="Cadastrar" class="btn btn-primary">
           <input type="reset" value="Limpar" class="btn btn-warning">
-      </div>
-    </form>
+        </div>
+
+  </div>
+ 
+  </form>
   </br>
   </div>
   <div class="container my-1">
-    <h2>Historico de Pesagem</h2>
+    <h2>Historico de Alimentação</h2>
     <table class="table table-striped my-5">
       <thead>
         <tr>
           <th>Codigo</th>
-          <th>Kilogramas</th>
-          <th>Data da Pesagem</th>
-          <th>Data do Cadastramento</th>
+          <th>Tipo</th>
+          <th>Numero de Calorias</th>
+          <th>Descrição</th>
+          <th>Data de consumo</th>
           <th>Data ultima atualização</th>
           <th colspan="2">Ações</th>
         </tr>
@@ -108,9 +123,10 @@
           <td>Otto</td>
           <td>@mdo</td>
           <td>@mdo</td>
+          <td>@mdo</td>
           <td>
-            <button class="btn btn-warning" contenteditable="false">Edit</button>
-            <button class="btn btn-danger" contenteditable="false">Apagar</button>
+              <button class="btn btn-warning" contenteditable="false">Editar</button>
+              <button class="btn btn-danger" contenteditable="false">Apagar</button>
           </td>
         </tr>
         <tr>
@@ -119,9 +135,10 @@
           <td>Thornton</td>
           <td>@fat</td>
           <td>@fat</td>
+          <td>@fat</td>
           <td>
-            <button class="btn btn-warning" contenteditable="false">Edit</button>
-            <button class="btn btn-danger" contenteditable="false">Apagar</button>
+              <button class="btn btn-warning" contenteditable="false">Editar</button>
+              <button class="btn btn-danger" contenteditable="false">Apagar</button>
           </td>
         </tr>
         <tr>
@@ -130,9 +147,10 @@
           <td>the Bird</td>
           <td>@twitter</td>
           <td>@twitter</td>
+          <td>@twitter</td>
           <td>
-            <button class="btn btn-warning" contenteditable="false">Edit</button>
-            <button class="btn btn-danger" contenteditable="false">Apagar</button>
+              <button class="btn btn-warning" contenteditable="false">Editar</button>
+              <button class="btn btn-danger" contenteditable="false">Apagar</button>
           </td>
         </tr>
         <tr>
@@ -141,9 +159,10 @@
           <td>the Bird</td>
           <td>@twitter</td>
           <td>@twitter</td>
+          <td>@twitter</td>
           <td>
-            <button class="btn btn-warning" contenteditable="false">Edit</button>
-            <button class="btn btn-danger" contenteditable="false">Apagar</button>
+              <button class="btn btn-warning" contenteditable="false">Editar</button>
+              <button class="btn btn-danger" contenteditable="false">Apagar</button>
           </td>
         </tr>
         <tr>
@@ -152,8 +171,9 @@
           <td>the Bird</td>
           <td>@twitter</td>
           <td>@twitter</td>
+          <td>@twitter</td>
           <td>
-            <button class="btn btn-warning" contenteditable="false">Edit</button>
+            <button class="btn btn-warning" contenteditable="false">Editar</button>
             <button class="btn btn-danger" contenteditable="false">Apagar</button>
           </td>
         </tr>
@@ -161,17 +181,17 @@
     </table>
 
   </div>
-  
+
 </body>
 <footer class="text-center">
-    Health Track - 2017
+  Health Track - 2017
 </footer>
 
-  <script src="resources/js/jquery.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
-    crossorigin="anonymous"></script>
-  <script src="resources/js/bootstrap.min.js"></script>
-  <script src="resources/js/popper.js"></script>
+<script src="resources/js/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+  crossorigin="anonymous"></script>
+<script src="resources/js/bootstrap.min.js"></script>
+<script src="resources/js/popper.js"></script>
 
 
 </html>

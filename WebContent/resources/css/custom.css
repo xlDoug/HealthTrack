@@ -8,5 +8,6 @@ footer {
     padding-bottom: 20px;
     position:fixed;
     bottom:0;
+    top: 50;
     width:100%;
 }
