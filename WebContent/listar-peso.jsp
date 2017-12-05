@@ -12,7 +12,7 @@
 
 	<!-- CONTEUDO -->
 	<div class="container my-3">
-		<form action="cadastrar-alimentacao.jsp" method="get" class="my-5">
+		<form action="cadastrar-peso.jsp" method="get" class="my-5">
 			<div>
 				<input type="submit" value="Cadastrar novo" class="btn btn-primary">
 			</div>
@@ -22,37 +22,38 @@
 	</br>
 	</div>
 	<div class="container my-1">
-		<h2>Historico de Alimentação</h2>
+		<h2>Historico de Peso</h2>
 		<table class="table table-striped my-5">
 			<thead>
 				<tr>
 					<th>Codigo</th>
-					<th>Tipo</th>
-					<th>Numero de Calorias</th>
-					<th>Descrição</th>
-					<th>Data de consumo</th>
+					<th>Peso</th>
+					<th>Data de Pesagem</th>
 					<th>Ultima atualização</th>
 					<th colspan="2">Ações</th>
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach items="${alimentos }" var="alimento">
+				<c:forEach items="${pesos }" var="peso">
 					<tr>
-						<th scope="row">${alimento.id}</th>
-						<td>${alimento.tipoAlimento.nome }</td>
-						<td>${alimento.caloria }</td>
-						<td>${alimento.descricao }</td>
-						<td><fmt:formatDate value="${alimento.data.time}"
+						<th scope="row">${peso.id}</th>
+						<td>${peso.peso }</td>
+						<td><fmt:formatDate value="${peso.data.time}"
 								pattern="dd/MM/yyyy" /></td>
-						<td><fmt:formatDate value="${alimento.data.time}"
+						<td><fmt:formatDate value="${peso.data.time}"
 								pattern="dd/MM/yyyy" /></td>
 						<td>
-							<c:url value="alimentacao" var="link">
+							<c:url value="peso" var="editar">
 								<c:param name="acao" value="editar"></c:param>
-								<c:param name="id" value="${alimento.id }"></c:param>
+								<c:param name="id" value="${peso.id }"></c:param>
 							</c:url>
-							<a href="${link }" class="btn btn-warning">Editar</a>
-							<button class="btn btn-danger" contenteditable="false">Apagar</button>
+							<a href="${editar }" class="btn btn-warning">Editar</a>
+							
+							<c:url value="peso" var="remover">
+								<c:param name="acao" value="remover"></c:param>
+								<c:param name="id" value="${peso.id }"></c:param>
+							</c:url>
+							<a href="${remover }" class="btn btn-danger">Apagar</a>
 						</td>
 					</tr>
 				</c:forEach>

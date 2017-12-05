@@ -69,6 +69,7 @@ public class AlimentacaoController extends HttpServlet {
 				request.setAttribute("erro", "Erro ao remover");
 			}
 			request.getRequestDispatcher("listar-alimentacao.jsp").forward(request, response);
+
 			break;
 		}
 	}
