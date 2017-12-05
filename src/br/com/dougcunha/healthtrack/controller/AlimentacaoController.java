@@ -58,10 +58,19 @@ public class AlimentacaoController extends HttpServlet {
 		case "editar":
 			editar(request, response);
 			break;
+
+		case "remover":
+			int id = Integer.parseInt(request.getParameter("id"));
+			try {
+				dao.remover(id);
+				request.setAttribute("msg", "Removido com sucesso!");
+
+			} catch (Exception e) {
+				request.setAttribute("erro", "Erro ao remover");
+			}
+			request.getRequestDispatcher("listar-alimentacao.jsp").forward(request, response);
+			break;
 		}
-		
-		
-		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -77,7 +86,6 @@ public class AlimentacaoController extends HttpServlet {
 			atualizar(request, response);
 			break;
 		}
-		
 	}
 	
 	private void editar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -102,7 +110,6 @@ public class AlimentacaoController extends HttpServlet {
 			al.setCaloria(Short.parseShort(request.getParameter("nrCalorias")));
 			dao.atualizar(al);
 			request.setAttribute("msg", "Atualizado com sucesso!");
-			
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println("deu erro");

@@ -47,12 +47,17 @@
 						<td><fmt:formatDate value="${alimento.data.time}"
 								pattern="dd/MM/yyyy" /></td>
 						<td>
-							<c:url value="alimentacao" var="link">
+							<c:url value="alimentacao" var="editar">
 								<c:param name="acao" value="editar"></c:param>
 								<c:param name="id" value="${alimento.id }"></c:param>
 							</c:url>
-							<a href="${link }" class="btn btn-warning">Editar</a>
-							<button class="btn btn-danger" contenteditable="false">Apagar</button>
+							<a href="${editar }" class="btn btn-warning">Editar</a>
+							
+							<c:url value="alimentacao" var="remover">
+								<c:param name="acao" value="remover"></c:param>
+								<c:param name="id" value="${alimento.id }"></c:param>
+							</c:url>
+							<a href="${remover }" class="btn btn-danger">Apagar</a>
 						</td>
 					</tr>
 				</c:forEach>
