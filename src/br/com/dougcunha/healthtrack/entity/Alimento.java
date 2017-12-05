@@ -6,7 +6,14 @@ public class Alimento extends Caloria {
 	private int id;
 	private String descricao;
 	private TipoAlimento tipoAlimento;
+	private String teste = "TESTE DOUG";
 	
+	public String getTeste() {
+		return teste;
+	}
+	public void setTeste(String teste) {
+		this.teste = "TESTE DOUG";
+	}
 	public int getId() {
 		return id;
 	}
@@ -38,8 +45,9 @@ public class Alimento extends Caloria {
 	}
 	@Override
 	public String toString() {
-		return "Alimento [id=" + id + ", descricao=" + descricao + ", tipoAlimento=" + tipoAlimento + ", getCaloria()="
-				+ getCaloria() + ", getData()=" + getData() + ", getUsuario()=" + getUsuario() + ", getClass()="
-				+ getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
+		return "Alimento [teste=" + teste +", id=" + id + ", descricao=" + descricao + ", tipoAlimento=" + tipoAlimento + ", getCaloria()=" + getCaloria() + ", getData()=" + getData() + ", getUsuario()=" + getUsuario()
+				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
+				+ "]";
 	}
+	
 }

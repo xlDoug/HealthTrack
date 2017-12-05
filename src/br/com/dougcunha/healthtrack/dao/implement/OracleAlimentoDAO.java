@@ -57,6 +57,7 @@ class OracleAlimentoDAO implements AlimentoDAO {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		System.out.println(alimento);
 	}
 
 	@Override
@@ -77,6 +78,7 @@ class OracleAlimentoDAO implements AlimentoDAO {
 
 	@Override
 	public Alimento buscar(int alimentoId) {
+		System.out.println("Buscando por id" + alimentoId);
 		conn = ConnectionManager.getInstance().getOracleConnection();
 		uDAO = DAOFactory.getUsuarioDAO();
 		String selectByIdQuery = "SELECT * FROM T_ALIMENTO WHERE T_ALIMENTO.COD_ALIMENTO = ?";
@@ -85,7 +87,6 @@ class OracleAlimentoDAO implements AlimentoDAO {
 			PreparedStatement pstmt = conn.prepareStatement(selectByIdQuery);
 			pstmt.setInt(1, alimentoId);
 			ResultSet rs = pstmt.executeQuery();
-			
 			if (rs.next()) {
 				alimento = new Alimento();
 				alimento.setId(rs.getInt("COD_ALIMENTO"));
@@ -104,6 +105,7 @@ class OracleAlimentoDAO implements AlimentoDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		System.out.println(alimento);
 		return alimento;
 	}
 
@@ -112,9 +114,10 @@ class OracleAlimentoDAO implements AlimentoDAO {
 		List<Alimento> alimentos = null;
 		conn = ConnectionManager.getInstance().getOracleConnection();
 		uDAO = DAOFactory.getUsuarioDAO();
-		String selectQuery = "SELECT * FROM T_ALIMENTO";
+		String selectQuery = "SELECT * FROM T_ALIMENTO WHERE T_USUARIO_COD_USUARIO = ? ORDER BY COD_ALIMENTO DESC";
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(selectQuery);
+			pstmt.setInt(1, userId);
 			ResultSet rs = pstmt.executeQuery();
 			alimentos = new ArrayList<Alimento>();
 			while (rs.next()) {
